@@ -1,6 +1,4 @@
-# TRUENORTH React-Native Challenge ⚡️
-
-Join TRUENORTH and build the next fintech app.
+# React-Native Challenge ⚡️
 
 ## Quick start
 
@@ -56,9 +54,13 @@ components/           // App components
 config/               // JSON with defaults (ie: SEO)
 screens/              // Router
 styles/               // Global styles
+models                // User for testing
 app.json              // app configuration
 package.json          // deps and workspace scripts
 babel.config.json     // babel configuration
 tsconfig.json         // typescript configuration
 README.md             // docs are important
 ```
+## Users for test
+
+They are inside models folder.
