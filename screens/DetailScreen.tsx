@@ -9,7 +9,7 @@ import { Fetching } from "../components/ui/ActivityIndicator";
 import { useNavigation } from "@react-navigation/native";
 import { PrimaryButton } from "../components/ui/PrimaryButton";
 import { CoinInfo } from "../components/ui/CoinInfo";
-import { formatUSA } from "../config/utils";
+import { formatUSA } from "../config/formatNumber";
 import { theme } from "../style/theme";
 
 /**

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 import ChevronLeft from "../icons/ChevronLeft";
 import { theme } from "../../style/theme";
@@ -7,7 +7,7 @@ export interface Header {
   onPress: () => void;
   name: string;
 }
-export const HeaderLeft: FunctionComponent<Header> = ({ onPress, name }) => {
+export const HeaderLeft = ({ onPress, name }: Header) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>

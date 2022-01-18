@@ -1,20 +1,19 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { Item } from "../../interfaces/interfaces";
 import { StyleSheet, Text, View, TouchableWithoutFeedback } from "react-native";
 import ArrowComponent from "../icons/ArrowIcon";
-import { formatUSA } from "../../config/utils";
+import { formatUSA } from "../../config/formatNumber";
 import { theme } from "../../style/theme";
 export interface Coin {
   item: Item;
   onPress?: () => void;
   styleItem?: Object;
 }
-export const CoinInfo: FunctionComponent<Coin> = ({
+export const CoinInfo = ({
   item,
   onPress,
   styleItem,
-}) => {
-  console.log("item value", item);
+}:Coin) => {
   const priceUsd = parseFloat(item.priceUsd).toFixed(2);
   const changePercent24Hr = (+item.changePercent24Hr).toFixed(1);
   const isPositive = +changePercent24Hr >= 0 ? true : false;
