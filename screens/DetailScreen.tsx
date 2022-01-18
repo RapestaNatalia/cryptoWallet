@@ -29,7 +29,7 @@ export default function ListScreen({ route }: Props) {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<Item>();
   const navigation = useNavigation();
-  // Todo revise la API y al ser free muchas veces retorna 429. Es un poco molesto pero los errores estan capturados.
+
   //const data = mockData.data;
 
   const item: Item | undefined = data;
@@ -53,9 +53,9 @@ export default function ListScreen({ route }: Props) {
   }, []);
   useEffect(() => {
     getDetail();
-    return () => { 
+    return () => {
       cancel = true;
-    }
+    };
   }, []);
 
   return (
@@ -76,7 +76,7 @@ export default function ListScreen({ route }: Props) {
                 Max Supply{" "}
                 {item.maxSupply && formatUSA((+item.maxSupply).toFixed(2))}
               </Text>
-              <View >
+              <View>
                 <Text style={styles.text}>
                   Market Cap $ {formatUSA((+item.marketCapUsd).toFixed(2))}
                   <Text style={styles.usd}> USD</Text>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.platinium,
     alignItems: "center",
     justifyContent: "center",
-    padding: 30
+    padding: 30,
   },
   itemContainer: {
     width: "100%",
@@ -112,23 +112,23 @@ const styles = StyleSheet.create({
   infoContainer: {
     backgroundColor: theme.colors.white,
     width: "100%",
-    borderRadius:8
+    borderRadius: 8,
   },
   coinInfo: {
     backgroundColor: theme.colors.white,
-    height:70,
+    height: 70,
   },
   text: {
     color: theme.colors.zinnwalditeBrown,
     fontSize: 16,
-    marginVertical:5
+    marginVertical: 5,
   },
   usd: {
     color: theme.colors.auroMetalSaurus,
     fontSize: 14,
   },
   bottomContainer: {
-    padding:20
+    padding: 20,
   },
 });
 

@@ -18,12 +18,12 @@ export interface User {
   password: string;
 }
 export interface partnerList {
-  name:string,
-  url: string,
-  comments: string
+  name: string;
+  url: string;
+  comments: string;
 }
-export interface Icon{
-  color?:string;
-  width?:number;
+export interface Icon {
+  color?: string;
+  width?: number;
   heigth?: number;
 }

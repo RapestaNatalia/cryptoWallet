@@ -9,7 +9,14 @@ export interface props {
 export const TabNavBar = ({ name, isFocus }: props) => {
   return (
     <View style={[styles.container, { borderTopWidth: isFocus ? 3 : 0 }]}>
-      <Text style={[styles.labelStyle,isFocus?styles.activeColor:styles.inactiveColor]}>{name}</Text>
+      <Text
+        style={[
+          styles.labelStyle,
+          isFocus ? styles.activeColor : styles.inactiveColor,
+        ]}
+      >
+        {name}
+      </Text>
     </View>
   );
 };
@@ -20,16 +27,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderTopColor: theme.colors.batteryChargedBlue,
-    paddingTop: 10  },
+    paddingTop: 10,
+  },
   labelStyle: {
     fontSize: 16,
-    fontStyle:'normal',
-    fontWeight:'bold',
+    fontStyle: "normal",
+    fontWeight: "bold",
   },
-  activeColor:{
-    color:theme.colors.bondiBlue,
+  activeColor: {
+    color: theme.colors.bondiBlue,
   },
-  inactiveColor:{
-    color:theme.colors.zinnwalditeBrown,
-  }
+  inactiveColor: {
+    color: theme.colors.zinnwalditeBrown,
+  },
 });

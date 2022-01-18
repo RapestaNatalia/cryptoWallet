@@ -9,9 +9,9 @@ export interface Header {
 }
 export const HeaderLeft: FunctionComponent<Header> = ({ onPress, name }) => {
   return (
-    <TouchableOpacity onPress={onPress} >
+    <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
-        <ChevronLeft /> 
+        <ChevronLeft />
         <Text style={styles.text}>{name}</Text>
       </View>
     </TouchableOpacity>
@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    alignItems:"center",
+    alignItems: "center",
     paddingLeft: 10,
   },
-  text:{
-      color:theme.colors.bondiBlue,
-      fontSize:14,
-      marginLeft:7
-  }
+  text: {
+    color: theme.colors.bondiBlue,
+    fontSize: 14,
+    marginLeft: 7,
+  },
 });

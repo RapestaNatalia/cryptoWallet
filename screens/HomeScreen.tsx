@@ -29,23 +29,23 @@ export default function HomeScreen() {
   }, []);
 
   useEffect(() => {
-    if (preLogTest && data.username!="" && data.password!="") {
+    if (preLogTest && data.username != "" && data.password != "") {
       login(data.username, data.password);
     }
   }, [data.password, data.username]);
 
   const checkUserStatus = async () => {
     const username = await getSensitiveData("username");
-    const password = await getSensitiveData("password")
-    if(username && password){
+    const password = await getSensitiveData("password");
+    if (username && password) {
       setPreLogTest(true);
       setData({
         ...data,
         username,
-        password
+        password,
       });
     }
-    }
+  };
 
   const login = async (userName: string, password: string) => {
     const foundUser = Users.filter((item) => {
@@ -68,8 +68,8 @@ export default function HomeScreen() {
       return;
     }
     setUser(userName);
-    setSensitiveData("username",userName);
-    setSensitiveData("password",password);
+    setSensitiveData("username", userName);
+    setSensitiveData("password", password);
     navigation.navigate("List");
   };
   const textInputChange = (val: string): void => {
@@ -185,5 +185,3 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
 });
-
-

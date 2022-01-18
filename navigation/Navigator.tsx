@@ -5,7 +5,7 @@ import HomeScreen from "../screens/HomeScreen";
 import ListScreen from "../screens/ListScreen";
 import DetailScreen from "../screens/DetailScreen";
 import WalletScreen from "../screens/WalletScreen";
-import {Logo} from "../components/ui/Logo";
+import { Logo } from "../components/ui/Logo";
 
 import { HeaderLeft } from "../components/ui/HeaderLeft";
 import { Item } from "../interfaces/interfaces";
@@ -43,7 +43,7 @@ export const Navigator = () => {
       <Stack.Screen
         options={{
           title: "To Do",
-          headerLeft: ()=> null
+          headerLeft: () => null,
         }}
         name="ToDo"
         component={ToDoScreen}
@@ -51,34 +51,43 @@ export const Navigator = () => {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
-        options={({navigation}) => ({
+        options={({ navigation }) => ({
           headerTitle: () => <Logo />,
           headerLeft: () => (
-           <HeaderLeft name="To Do" onPress={()=>navigation.navigate("ToDo")}/>
+            <HeaderLeft
+              name="To Do"
+              onPress={() => navigation.navigate("ToDo")}
+            />
           ),
         })}
       />
 
-      <Stack.Screen name="List" component={ListScreen} 
-      options={({navigation}) => ({
-        headerLeft: () => (
-         <HeaderLeft name="Home" onPress={()=>navigation.goBack()}/>
-        ),
-      })}
+      <Stack.Screen
+        name="List"
+        component={ListScreen}
+        options={({ navigation }) => ({
+          headerLeft: () => (
+            <HeaderLeft name="Home" onPress={() => navigation.goBack()} />
+          ),
+        })}
       />
-      <Stack.Screen name="Detail" component={DetailScreen}
-      options={({navigation}) => ({
-        headerLeft: () => (
-         <HeaderLeft name="List" onPress={()=>navigation.goBack()}/>
-        ),
-      })}
+      <Stack.Screen
+        name="Detail"
+        component={DetailScreen}
+        options={({ navigation }) => ({
+          headerLeft: () => (
+            <HeaderLeft name="List" onPress={() => navigation.goBack()} />
+          ),
+        })}
       />
-      <Stack.Screen name="Wallet" component={WalletScreen} 
-      options={({navigation}) => ({
-        headerLeft: () => (
-         <HeaderLeft name="Detail" onPress={()=>navigation.goBack()}/>
-        ),
-      })}
+      <Stack.Screen
+        name="Wallet"
+        component={WalletScreen}
+        options={({ navigation }) => ({
+          headerLeft: () => (
+            <HeaderLeft name="Detail" onPress={() => navigation.goBack()} />
+          ),
+        })}
       />
     </Stack.Navigator>
   );

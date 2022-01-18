@@ -26,9 +26,9 @@ export default function ListScreen() {
   let cancel = false;
   useEffect(() => {
     getList();
-    return () => { 
+    return () => {
       cancel = true;
-    }
+    };
   }, []);
   const getList = useCallback(async () => {
     setLoading(true);

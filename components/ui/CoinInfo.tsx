@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { Item } from "../../interfaces/interfaces";
 import { StyleSheet, Text, View, TouchableWithoutFeedback } from "react-native";
 import ArrowComponent from "../icons/ArrowIcon";
-import {formatUSA} from '../../config/utils';
+import { formatUSA } from "../../config/utils";
 import { theme } from "../../style/theme";
 export interface Coin {
   item: Item;
@@ -37,8 +37,7 @@ export const CoinInfo: FunctionComponent<Coin> = ({
               {/* 💯  In this execercise you can round numbers without a library */}
               <View style={styles.leftContainer}>
                 <Text style={styles.price}>
-                  {/* TODO agregar formato */}
-                 $ {formatUSA(priceUsd)}
+                  {/* TODO agregar formato */}$ {formatUSA(priceUsd)}
                   <Text style={styles.usd}> USD</Text>
                 </Text>
               </View>
@@ -51,7 +50,13 @@ export const CoinInfo: FunctionComponent<Coin> = ({
                 ]}
               >
                 <View style={!isPositive && styles.arrowNegative}>
-                  <ArrowComponent color={isPositive ? theme.colors.greenCrayola : theme.colors.deepCarminePink} />
+                  <ArrowComponent
+                    color={
+                      isPositive
+                        ? theme.colors.greenCrayola
+                        : theme.colors.deepCarminePink
+                    }
+                  />
                 </View>
                 <Text style={styles.rigthContent}>
                   {" "}
@@ -78,7 +83,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
   itemContainer: {
-    borderRadius:8,
+    borderRadius: 8,
     display: "flex",
     backgroundColor: theme.colors.white,
     marginVertical: 6,
@@ -122,8 +127,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-start",
   },
-  rigthContainerTop: {
-  },
+  rigthContainerTop: {},
   rigthContainer: {
     flexDirection: "row",
     justifyContent: "flex-end",
@@ -145,7 +149,7 @@ const styles = StyleSheet.create({
     color: theme.colors.castletonGreen,
   },
   boxNegative: {
-    backgroundColor:theme.colors.palePink,
+    backgroundColor: theme.colors.palePink,
     color: theme.colors.darkCandyAppleRed,
   },
   arrowNegative: {
