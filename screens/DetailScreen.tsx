@@ -113,6 +113,11 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     width: "100%",
     borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.06,
+    shadowRadius: 2,  
+    elevation: 2
   },
   coinInfo: {
     backgroundColor: theme.colors.white,

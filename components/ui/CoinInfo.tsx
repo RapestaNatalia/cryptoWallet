@@ -72,6 +72,7 @@ export const CoinInfo = ({
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: "white",
+    borderRadius:8,
   },
   header: {
     flexDirection: "row",
