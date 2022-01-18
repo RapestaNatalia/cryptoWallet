@@ -70,6 +70,7 @@ export default function HomeScreen() {
     setUser(userName);
     setSensitiveData("username", userName);
     setSensitiveData("password", password);
+    setPreLogTest(false);
     navigation.navigate("List");
   };
   const textInputChange = (val: string): void => {
