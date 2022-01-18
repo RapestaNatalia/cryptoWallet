@@ -27,20 +27,20 @@ interface Props extends StackScreenProps<RootStackParams, "Detail"> {}
 
 export default function ListScreen({ route }: Props) {
   const [loading, setLoading] = useState<boolean>(false);
-  const [data2, setData] = useState<Item>();
+  const [data, setData] = useState<Item>();
   const navigation = useNavigation();
-  // TODO VOLVER ATRAS
-  const data = mockData.data;
+  // Todo revise la API y al ser free muchas veces retorna 429. Es un poco molesto pero los errores estan capturados.
+  //const data = mockData.data;
 
   const item: Item | undefined = data;
-
+  let cancel = false;
   const getDetail = useCallback(async () => {
     const { id } = route.params.item;
-
     setLoading(true);
     axios
       .get(`${COINCAP_URL}/${id}`)
       .then(function (response) {
+        if (cancel) return;
         setData(response.data.data);
         setLoading(false);
       })
@@ -53,6 +53,9 @@ export default function ListScreen({ route }: Props) {
   }, []);
   useEffect(() => {
     getDetail();
+    return () => { 
+      cancel = true;
+    }
   }, []);
 
   return (

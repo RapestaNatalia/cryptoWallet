@@ -23,16 +23,19 @@ export default function ListScreen() {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<Item[]>();
   const navigation = useNavigation();
+  let cancel = false;
   useEffect(() => {
     getList();
+    return () => { 
+      cancel = true;
+    }
   }, []);
-
   const getList = useCallback(async () => {
     setLoading(true);
-
     axios
       .get(`${COINCAP_URL}`)
       .then(function (response) {
+        if (cancel) return;
         console.log(JSON.stringify(response.data));
         setData(response.data.data);
         setLoading(false);
