@@ -21,6 +21,7 @@ import { theme } from "../style/theme";
  *
  * 💯 Using axios great plus
  * 💯 Handle loading and error scenarios, always
+ *
  */
 
 interface Props extends StackScreenProps<RootStackParams, "Detail"> {}
