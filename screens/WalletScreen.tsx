@@ -68,14 +68,12 @@ export const AccountSection = () => {
 export const PartnersSection = () => {
   const partnerList = [
     {
-      name: "Personal Pay",
-      url: "https://www.personalpay.com.ar/",
+      name: "Personal Wallet",
       comments:
         "This is a virtual wallet of Personal for paying,send, save and manage your money. In this case I have participated as front end and back end engineer.",
     },
     {
       name: "Omint Assistance",
-      url: "https://www.omintassistance.com.ar/",
       comments:
         "The main purpose of this app is give the user a wide variety of services and assistance in connection with travel's needs. In this case I have developed all the mobile app.",
     },
@@ -86,10 +84,6 @@ export const PartnersSection = () => {
       <View style={styles.itemContainer}>
         <Text style={styles.itemName}>{name}</Text>
         <Text style={styles.itemComment}>{comments}</Text>
-        <View style={styles.url}>
-          <Text style={styles.itemTitleUrl}>URL: </Text>
-          <Text style={styles.itemUrl}>{url}</Text>
-        </View>
       </View>
     );
   };
